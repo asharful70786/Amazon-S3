@@ -21,7 +21,7 @@ async function deleteFolder(bucket, prefix) {
       Objects: listedObjects.Contents.map(obj => ({ Key: obj.Key })),
     },
   });
-
+ 
   const data = await client.send(deleteCommand);
   console.log("Deleted:", data.Deleted);
 }
